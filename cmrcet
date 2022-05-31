@@ -1,0 +1,430 @@
+#include<stdio.h>
+int balance=10000;
+int main()
+{
+	int pin,choice,amount,pinchances=3;
+	while(pinchances--)
+	{
+	printf("enter 4 digit pin no: ");
+	scanf("%d",&pin);
+	if(pin == 1111 || pin == 2222 ||pin ==3333)
+	{
+			printf("pin verified");
+			while(1)
+			{
+			printf("\nselect \n1.Deposit \n2.Withdraw\n3.exit");
+			printf("\nenter choice: ");
+			scanf("%d",&choice);
+			switch(choice)
+			{
+			case 1:
+				{
+					printf("enter the money to deposit in multiple of 100: ");
+					scanf("%d",&amount);
+					if(amount%100==0 && amount>0)
+					{
+						balance+=amount;
+						printf("balance : %d",balance);
+					}
+					else
+					{
+						printf("invalid amount");
+					}
+					break;
+				}
+			case 2:
+			{
+				printf("enter the money to withdraw in multiple of 100: ");
+				scanf("%d",&amount);
+				if(amount%100==0 && amount>0 && amount<=balance)
+				{
+					balance-=amount;
+					printf("balance : %d",balance);
+				}
+				else
+				{
+					printf("invalid amount");
+				}
+				break;	
+			}
+			default:
+			{
+			    if(choice!=3)
+				printf("Invalid choice");
+			}
+			}
+			
+			if(choice==3)
+			    break;
+			}
+	}
+	else
+	{
+	printf("wrong pin, Reach nearest branch to change pin\n");
+	printf("left over chances : %d\n",pinchances);
+	}
+	if (choice==3)
+	        break;
+
+	}
+	return 0;
+}
+---------------------------------
+#include<stdio.h>
+int main()
+{
+	printf("====welcome to CMR====");
+	while(1)
+	{
+		printf("Departments conducting Events");
+	printf("1.CSE\n 2.ECE \n 3.Mech\n 4.EEE \n 5.IT\n Enter the dept");
+	int choice;
+	char event;
+	scanf("%d",&choice);
+	switch(choice)
+	{
+		case 1:
+			{
+				printf("Welcome to CSE");
+				printf("Event :\nA.CC \n B.Hackathon");
+				scanf("%c",&event);
+				switch(event)
+				{
+					case 'A':
+						{
+							printf("Venue-> A121");
+							break;
+						}
+					case 'B':
+						{
+							printf("Venue-> A122");
+							break;
+						}
+					default:
+						{
+							printf("No events or wrong Input");
+						}
+				}
+				break;
+			}
+		case 2:
+			{
+				printf("Welcome to ECE");
+				printf("Events: A.VLSI \n 2. PCB);
+				scanf("%c",&event);
+				switch(event)
+				{
+					case 'A':
+						{
+							printf("Venue-> A123");
+							break;
+						}
+					case 'B':
+						{
+							printf("Venue-> A124");
+							break;
+						}
+					default:
+						{
+							printf("No events or wrong Input");
+						}
+				}
+				break;
+			}
+		case 3:
+			{
+			printf("Welcome to Mech");
+			printf("EVENTS: A.Auto cad \n 2.Fluid Mech);
+			scanf("%c",&event);
+				switch(event)
+				{
+					case 'A':
+						{
+							printf("Venue-> A125");
+							break;
+						}
+					case 'B':
+						{
+							printf("Venue-> A126");
+							break;
+						}
+					default:
+						{
+							printf("No events or wrong Input");
+						}
+				}
+			break;
+			}
+		case 4:
+			{
+				printf("welcome to EEE");
+				printf("EVENT:\n A. Transformers\nB.NA");
+				scanf("%c",&event);
+				switch(event)
+				{
+					case 'A':
+						{
+							printf("Venue-> A127");
+							break;
+						}
+					case 'B':
+						{
+							printf("Venue-> A128");
+							break;
+						}
+					default:
+						{
+							printf("No events or wrong Input");
+						}
+				}
+				break;
+			}
+		case 5:
+			{
+				printf("welcome to IT");
+				printf("EVENTS: 1.DBMS");
+				scanf("%c",&event);
+				switch(event)
+				{
+					case 'A':
+						{
+							printf("Venue-> A129");
+							break;
+						}
+					default:
+						{
+							printf("No events or wrong Input");
+						}
+				}
+				break;
+			}
+			default:
+			{
+				if(choice!=0)
+					printf("invalid Input");
+			}
+	}
+	//end of switch
+	if(choice ==0)
+	{
+		break;
+	}
+	}//end of while
+}
+----
+	int main()
+	{
+		int sub=6,marks,sum=0;
+		
+		while(sub>0)
+		{
+			scanf("%d",&marks);
+			sum+=marks;
+			sub--;
+		}
+		printf("%d",sum);
+	}
+
+-------------
+int main()
+{
+	char ch;
+	scanf("%c",&ch);
+	if((int)ch>=65 && (int)ch<=90)
+	{
+		printf("Upper case");
+	}
+	else if((int)ch >=97 && (int) ch<=122)
+	{
+		printf("Lower case");
+	}
+	else if((int)ch=>48 && (int)ch<=57)
+	{
+		printf("Numbers");
+	}
+	else
+	{
+		printf("symbols");
+	}
+}
+
+-------------------
+int main()
+{
+	int choice;
+	printf("1.UPPER \n 2.LOWER \n 3.NUMBERS \n4.SYMBOLS\nEnter your choice");
+	scanf("%d",&choice);
+	switch(choice)
+	{
+		case 1:
+			{
+				int up=65;
+				printf("upper case: ");
+				while(up<=90)
+				{
+					printf("%c ",up++);
+				}
+				break;
+			}
+		case 2:
+			{
+				int lw=97;
+				printf("lower values: ");
+				while(lw<=122)
+				{
+					printf("%c ",lw++);
+				}
+				break;
+			}
+		case 3:
+			{
+				int num=48;
+				printf("numbers: ");
+				while(num<=57)
+					printf("%c ",(char)num++);
+				break;
+			}
+		case 4:
+			{
+				int sym=0;
+				printf("symbols: "); 
+				while(sym<=255)
+				{
+					if((sym>=65&&sym<=90)||(sym>=97&&sym<=122)||(sym>=48&&sym<=57))
+						continue;
+					else
+						printf("%c ",sym);
+					sym++;
+				}
+			}
+	}
+	
+}
+--------------------------------
+int main()
+{
+	int dir,sum=0;
+	while(1)
+	{
+		scanf("%d",&dir);
+		
+		if (dir ==1 || dir ==-1)
+			sum+=dir;
+		else if(dir ==0)
+			break;
+		else
+		{
+			printf("Invalid input");
+			break;
+		}
+	}
+	if(dir==0)
+	{
+		int res= sum%4;
+		switch(res)
+			{
+			case 0:	printf("East");
+					break;
+			case 1:
+			case -3: printf("North")
+					break;
+			case 2:
+			case -2:printf("west");
+					break;
+			case 3:
+			case -1: printf("south");
+					break;
+			}
+	}	
+}
+----------------------
+
+int main()
+{
+	int choice;
+	scanf("%d",&choice);
+	switch(choice)
+	{
+		case 1:{
+			char ini,fin;
+			scanf("%c%c",&ini,&fin);
+			if(ini>='A' && ini <='Z' && fin>='A && fin<='Z')
+			{
+				if((int) ini<(int)fin)
+				{
+					while(ini<=fin)
+					{
+						printf("%c ",ini++);
+					}
+				}
+				else
+				{
+					while(ini>=fin)
+					{
+						printf("%c ",ini--);
+					}
+				}
+			}
+			else
+			{
+				printf("invalid inputs");
+			}
+			break;
+			}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+https://github.com/Nvijaysundar/CMRCET2NDYEARS
+
+
+
+
+
+
+
+
+
+
+
